@@ -1,0 +1,15 @@
+name: Demo Workflow Manual Parte 6
+
+on:
+  workflow_dispatch:
+    inputs:
+      mensaje:
+        description: 'Mensaje de texto a imprimir'
+        required: true
+
+jobs:
+  imprimir_mensaje:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Imprimir mensaje por consola
+        run: echo "${{ github.event.inputs.mensaje }}"
